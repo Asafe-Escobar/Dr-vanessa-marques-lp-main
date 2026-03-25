@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 15% 12%;
+    --foreground: 40 30% 95%;
+
+    --card: 30 15% 16%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 30 15% 16%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 36 45% 55%;
+    --primary-foreground: 30 15% 10%;
+
+    --secondary: 30 12% 20%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 30 10% 22%;
+    --muted-foreground: 30 15% 55%;
+
+    --accent: 36 45% 55%;
+    --accent-foreground: 30 15% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 25% 30%;
+    --input: 30 12% 20%;
+    --ring: 36 45% 55%;
+
+    --radius: 0.5rem;
+
+    --gold: 36 45% 55%;
+    --gold-light: 36 55% 68%;
+    --gold-dark: 36 35% 40%;
+    --hero-dark: 30 20% 8%;
+    --hero-mid: 30 15% 16%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.03; }
+  50% { transform: translateY(-15px); opacity: 0.05; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.02; transform: scale(1); }
+  50% { opacity: 0.04; transform: scale(1.05); }
+}
+
+@keyframes line-drift {
+  0% { opacity: 0; transform: translateX(-5%) translateY(-3%); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(3%) translateY(2%); }
+}
+
+.animate-float-2 { animation: float 10s ease-in-out infinite 1s; }
+.animate-float-4 { animation: pulse-soft 8s ease-in-out infinite; }
+
+.animate-line-1 { animation: line-drift 12s ease-in-out infinite; }
+.animate-line-2 { animation: line-drift 15s ease-in-out infinite 2s; }
+.animate-line-3 { animation: line-drift 10s ease-in-out infinite 4s; }
+.animate-line-4 { animation: line-drift 14s ease-in-out infinite 1s; }
+.animate-line-5 { animation: line-drift 11s ease-in-out infinite 3s; }
+.animate-line-6 { animation: line-drift 13s ease-in-out infinite 5s; }
+.animate-line-7 { animation: line-drift 16s ease-in-out infinite 2.5s; }
