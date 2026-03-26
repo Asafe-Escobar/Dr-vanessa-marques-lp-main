@@ -26,23 +26,23 @@ const HeroSection = () => {
           {/* Text content */}
           <div className="relative z-20 flex-1 flex flex-col justify-center py-6 lg:py-20 lg:pb-32 max-w-2xl -mt-16 lg:mt-0">
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-8">
-              Descubra a causa real do seu{" "}
+              Descubra a causa exata do seu{" "}
               <span className="underline decoration-gold decoration-2 underline-offset-4">
                 desconforto digestivo
               </span>
-              , hoje!
+              !
             </h1>
 
             <div className="border-l-2 border-gold pl-5 mb-8">
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body">
-                Sofre com estufamento, refluxo, queimação ou alterações intestinais?   Agende sua consulta {" "}
-                <strong className="text-foreground"> com a Dra. Vanessa em Fortaleza.</strong>{" "}
-                Tenha uma avaliação completa e acesso a exames como a endoscopia para um diagnóstico preciso e o tratamento certo.
+                Sofre com estufamento, gases, refluxo, dores abdominais ou alterações intestinais? Agende sua consulta{" "}
+                <strong className="text-foreground">com a Dra. Vanessa Marques em Fortaleza.</strong>{" "}
+                Tenha uma avaliação completa e acesso a exames como a endoscopia digestiva alta e o teste respiratório para um diagnóstico preciso e um tratamento correto.
               </p>
             </div>
 
             <a
-              href="https://wa.me/5585999999999"
+              href="https://wa.me/558596265262?text=Olá!%20Vi%20o%20anúncio%20no%20Google%20e%20gostaria%20de%20mais%20informações."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-foreground text-background font-body font-semibold text-sm tracking-widest uppercase px-10 py-4 rounded-lg hover:bg-gold hover:text-primary-foreground transition-all duration-300 w-fit"
@@ -80,13 +80,13 @@ const HeroSection = () => {
           </div>
           <div className="ml-auto">
             <a
-              href="https://instagram.com/dravanessa.marques"
+              href="https://www.instagram.com/vanessamarquesgastro/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 border border-muted/50 rounded-full px-4 py-2 text-muted-foreground hover:text-gold hover:border-gold transition-colors text-xs md:text-sm font-body"
             >
               <Instagram className="w-4 h-4" />
-              @dravanessa.marques
+              @vanessamarquesgastro
             </a>
           </div>
         </footer>
