@@ -35,10 +35,9 @@ const HeroSection = () => {
 
             <div className="border-l-2 border-gold pl-5 mb-8">
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body">
-                Sofre com estufamento, gases ou má digestão? Realize seu{" "}
+                Sofre com estufamento, refluxo, queimação ou alterações intestinais?   Agende sua consulta {" "}
                 <strong className="text-foreground">Teste Respiratório em Fortaleza</strong>{" "}
-                com a Dra. Vanessa e descubra o que realmente está causando o seu desconforto.
-                Diagnóstico preciso para o tratamento certo.
+                com a Dra. Vanessa em Fortaleza. Tenha uma avaliação completa e acesso a exames como a endoscopia para um diagnóstico preciso e o tratamento certo.
               </p>
             </div>
 
@@ -48,7 +47,7 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-foreground text-background font-body font-semibold text-sm tracking-widest uppercase px-10 py-4 rounded-lg hover:bg-gold hover:text-primary-foreground transition-all duration-300 w-fit"
             >
-              Agendar Consulta
+               AGENDAR CONSULTA
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
