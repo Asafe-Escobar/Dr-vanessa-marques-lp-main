@@ -36,8 +36,8 @@ const HeroSection = () => {
             <div className="border-l-2 border-gold pl-5 mb-8">
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body">
                 Sofre com estufamento, refluxo, queimação ou alterações intestinais?   Agende sua consulta {" "}
-                <strong className="text-foreground">Teste Respiratório em Fortaleza</strong>{" "}
-                com a Dra. Vanessa em Fortaleza. Tenha uma avaliação completa e acesso a exames como a endoscopia para um diagnóstico preciso e o tratamento certo.
+                <strong className="text-foreground"> com a Dra. Vanessa em Fortaleza.</strong>{" "}
+                Tenha uma avaliação completa e acesso a exames como a endoscopia para um diagnóstico preciso e o tratamento certo.
               </p>
             </div>
 
