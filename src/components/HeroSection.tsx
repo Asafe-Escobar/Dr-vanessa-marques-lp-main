@@ -72,7 +72,7 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2 text-muted-foreground text-xs md:text-sm font-body">
             <Users className="w-4 h-4 text-gold" />
-            +5 mil Pacientes
+            +10 anos de experiência
           </div>
           <div className="flex items-center gap-2 text-muted-foreground text-xs md:text-sm font-body">
             <ShieldCheck className="w-4 h-4 text-gold" />
