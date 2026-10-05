@@ -1,95 +1,161 @@
-import { ArrowRight, MapPin, Users, ShieldCheck, Instagram } from "lucide-react";
+import { ArrowRight, CalendarDays, ShieldCheck, UserRound } from "lucide-react";
 import draVanessa from "@/assets/dra-vanessa.png";
 import logoVanessa from "@/assets/logo-vanessa.png";
 import BackgroundIcons from "./BackgroundIcons";
+import { IntestineIcon, LiverIcon, PancreasIcon, StomachIcon } from "./OrganIcons";
+
+const WHATSAPP_URL =
+  "https://wa.me/558596265262?text=Olá!%20Vi%20o%20anúncio%20no%20Google%20e%20gostaria%20de%20mais%20informações.";
+
+const features = [
+  { icon: StomachIcon, label: ["Diagnóstico", "preciso"] },
+  { icon: IntestineIcon, label: ["Exames", "avançados"] },
+  { icon: UserRound, label: ["Atendimento", "humanizado"] },
+  { icon: ShieldCheck, label: ["Tratamento", "personalizado"] },
+];
+
+const organs = [
+  { icon: StomachIcon, label: "Estômago" },
+  { icon: IntestineIcon, label: "Intestino" },
+  { icon: LiverIcon, label: "Fígado" },
+  { icon: PancreasIcon, label: "Pâncreas" },
+];
+
+const smallCaps = "font-body text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.18em]";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-background overflow-hidden">
-      {/* Gold top bar */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold-dark via-gold to-gold-light" />
-
       <BackgroundIcons />
 
-      <div className="relative z-10 min-h-screen flex flex-col">
+      <div
+        className="relative z-10 mx-auto grid min-h-screen max-w-[1760px] px-6 sm:px-10 lg:px-[6vw]
+          grid-cols-1 [grid-template-areas:'logo'_'intro'_'photo'_'organs'_'body']
+          lg:grid-cols-[minmax(0,50%)_minmax(0,1fr)_auto] xl:grid-cols-[minmax(0,52%)_minmax(0,1fr)_auto] lg:grid-rows-[auto_auto_1fr]
+          lg:[grid-template-areas:'logo_photo_organs'_'intro_photo_organs'_'body_photo_organs']"
+      >
         {/* Logo */}
-        <header className="px-6 pt-6 md:px-16 md:pt-10">
+        <header className="[grid-area:logo] pt-8 lg:pt-10">
           <img
             src={logoVanessa}
             alt="Dra. Vanessa Marques - Gastroenterologia e Endoscopia Digestiva"
-            className="h-20 md:h-28 lg:h-32 brightness-0 invert"
+            className="h-20 sm:h-24 lg:h-[clamp(116px,15vh,150px)] -ml-2 brightness-0 invert opacity-95"
           />
         </header>
 
-        {/* Main content */}
-        <div className="flex-1 flex flex-col-reverse lg:flex-row items-center lg:items-end px-6 md:px-16 pb-0 lg:pb-0">
-          {/* Text content */}
-          <div className="relative z-20 flex-1 flex flex-col justify-center py-6 lg:py-20 lg:pb-32 max-w-2xl -mt-16 lg:mt-0">
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-8">
-              Descubra a causa exata do seu{" "}
-              <span className="underline decoration-gold decoration-2 underline-offset-4">
-                desconforto digestivo
-              </span>
-              !
-            </h1>
+        {/* Selo + título */}
+        <div className="[grid-area:intro] pt-10 sm:pt-14 lg:pt-[clamp(2rem,8vh,6rem)]">
+          <p className={`${smallCaps} flex items-center gap-4 text-foreground/80 mb-5 lg:mb-6`}>
+            Saúde digestiva é qualidade de vida
+            <span className="h-px w-12 sm:w-16 bg-gold/70" aria-hidden="true" />
+          </p>
 
-            <div className="border-l-2 border-gold pl-5 mb-8">
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-body">
-                Sofre com estufamento, gases, refluxo, dores abdominais ou alterações intestinais? Agende sua consulta{" "}
-                <strong className="text-foreground">com a Dra. Vanessa Marques em Fortaleza.</strong>{" "}
-                Tenha uma avaliação completa e acesso a exames como a endoscopia digestiva alta e o teste respiratório para um diagnóstico preciso e um tratamento correto.
-              </p>
-            </div>
-
-            <a
-              href="https://wa.me/558596265262?text=Olá!%20Vi%20o%20anúncio%20no%20Google%20e%20gostaria%20de%20mais%20informações."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-foreground text-background font-body font-semibold text-sm tracking-widest uppercase px-10 py-4 rounded-lg hover:bg-gold hover:text-primary-foreground transition-all duration-300 w-fit"
-            >
-               AGENDAR CONSULTA
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Photo */}
-          <div className="relative flex-shrink-0 lg:flex-1 flex justify-center lg:justify-end items-end">
-            <img
-              src={draVanessa}
-              alt="Dra. Vanessa Marques"
-              className="w-72 sm:w-80 md:w-96 lg:w-[480px] xl:w-[540px] object-contain drop-shadow-2xl"
-            />
-            {/* Gradient overlay on mobile - bottom fade into background */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent lg:hidden" />
-          </div>
+          <h1 className="font-display font-semibold text-foreground leading-[1.08] tracking-[-0.01em] text-[clamp(2.1rem,7.6vw,3.25rem)] lg:text-[clamp(2.75rem,4.1vw,4.75rem)]">
+            Descubra a causa exata <br className="hidden xl:block" />
+            do seu{" "}
+            <span className="underline decoration-gold decoration-[2px] underline-offset-[0.18em]">
+              desconforto
+            </span>{" "}
+            <br className="hidden xl:block" />
+            digestivo!
+          </h1>
         </div>
 
-        {/* Footer badges */}
-        <footer className="relative z-10 px-6 md:px-16 py-5 flex flex-wrap items-center gap-4 md:gap-8 border-t border-muted/30">
-          <div className="flex items-center gap-2 text-muted-foreground text-xs md:text-sm font-body">
-            <MapPin className="w-4 h-4 text-gold" />
-            Fortaleza
+        {/* Foto da doutora */}
+        <div className="[grid-area:photo] relative flex justify-center items-end mt-6 lg:mt-0 lg:justify-center">
+          {/* Frase lateral */}
+          <div className="absolute z-20 left-0 top-[6%] sm:left-[6%] lg:left-[-6%] lg:top-[19%] xl:left-[-2%]">
+            <p className={`${smallCaps} flex items-start gap-3 text-foreground/85 leading-[1.9]`}>
+              <span className="mt-[0.9em] h-px w-6 sm:w-9 bg-gold/70 shrink-0" aria-hidden="true" />
+              <span>
+                Seu intestino
+                <br />
+                também fala.
+              </span>
+            </p>
+            <p className="font-display italic text-gold-light text-lg sm:text-xl lg:text-2xl pl-9 sm:pl-12 mt-1">
+              Vamos ouvir?
+            </p>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground text-xs md:text-sm font-body">
-            <Users className="w-4 h-4 text-gold" />
-            +10 anos de experiência
+
+          <img
+            src={draVanessa}
+            alt="Dra. Vanessa Marques"
+            className="relative z-10 w-[78%] max-w-[420px] sm:max-w-[460px] lg:w-auto lg:max-w-none lg:h-[min(82vh,920px)] object-contain object-bottom drop-shadow-2xl lg:translate-x-[10%] xl:translate-x-[6%]
+              [mask-image:linear-gradient(to_bottom,black_82%,transparent)] lg:[mask-image:linear-gradient(to_bottom,black_94%,transparent)]"
+          />
+        </div>
+
+        {/* Órgãos */}
+        <ul
+          className="[grid-area:organs] relative z-20 grid grid-cols-4 gap-2 -mt-6 pb-10
+            lg:mt-0 lg:pb-0 lg:flex lg:flex-col lg:gap-[clamp(1rem,2.4vh,1.5rem)] lg:self-center lg:pl-6 xl:pl-10"
+          aria-label="Áreas de atendimento"
+        >
+          {/* Linha vertical que conecta os círculos (desktop) */}
+          <span
+            className="hidden lg:block absolute left-[calc(1.5rem+28px)] xl:left-[calc(2.5rem+28px)] top-7 -bottom-16 w-px bg-gold/50"
+            aria-hidden="true"
+          />
+          {organs.map(({ icon: Icon, label }) => (
+            <li key={label} className="relative flex flex-col items-center gap-2 lg:flex-row lg:gap-5">
+              <span className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-gold/60 bg-background/80 text-gold-light backdrop-blur-sm">
+                <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
+              </span>
+              <span className={`${smallCaps} text-[9px] sm:text-[10px] text-foreground/80`}>{label}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Benefícios, texto e CTA */}
+        <div className="[grid-area:body] pb-14 lg:pb-[clamp(2.5rem,8vh,5rem)]">
+          <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-y-4 xl:flex-nowrap mt-2 lg:mt-[clamp(1.5rem,4vh,2.75rem)]">
+            {features.map(({ icon: Icon, label }, i) => (
+              <li
+                key={label[0]}
+                className={`flex items-center gap-3 sm:pr-3 2xl:pr-5 ${i > 0 ? "sm:pl-3 2xl:pl-5 sm:border-l sm:border-gold/40" : ""} ${i === 2 ? "lg:max-xl:border-l-0 lg:max-xl:pl-0" : ""}`}
+              >
+                <Icon className="h-7 w-7 2xl:h-8 2xl:w-8 shrink-0 text-gold-light" strokeWidth={1.3} />
+                <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] tracking-[0.14em] 2xl:tracking-[0.18em] whitespace-nowrap text-foreground/80`}>
+                  {label[0]}
+                  <br />
+                  {label[1]}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="border-l border-gold/70 pl-5 sm:pl-6 mt-8 lg:mt-[clamp(1.5rem,4.5vh,3rem)] max-w-[62ch]">
+            <p className="font-body text-sm md:text-[15px] leading-[1.75] text-foreground/80">
+              Sofre com estufamento, gases, refluxo, dores abdominais ou alterações intestinais?
+              <br className="hidden xl:block" /> Agende sua consulta com a{" "}
+              <strong className="font-semibold text-foreground">Dra. Vanessa Marques em Fortaleza.</strong>
+              <br className="hidden xl:block" /> Tenha uma avaliação completa e acesso a exames como a endoscopia
+              digestiva alta e o teste respiratório para um diagnóstico preciso e um tratamento correto.
+            </p>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground text-xs md:text-sm font-body">
-            <ShieldCheck className="w-4 h-4 text-gold" />
-            Médica de Confiança
-          </div>
-          <div className="ml-auto">
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 2xl:gap-10 mt-8 lg:mt-[clamp(1.75rem,5vh,3rem)]">
             <a
-              href="https://www.instagram.com/vanessamarquesgastro/"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-muted/50 rounded-full px-4 py-2 text-muted-foreground hover:text-gold hover:border-gold transition-colors text-xs md:text-sm font-body"
+              className="inline-flex items-center justify-center gap-4 whitespace-nowrap rounded-md bg-foreground px-8 xl:px-10 py-[1.1rem] font-body text-sm font-semibold uppercase tracking-[0.16em] text-[hsl(var(--hero-mid))] shadow-[0_10px_30px_-12px_hsl(var(--hero-dark)/0.8)] transition-colors duration-300 hover:bg-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-fit"
             >
-              <Instagram className="w-4 h-4" />
-              @vanessamarquesgastro
+              Agendar consulta
+              <ArrowRight className="h-4 w-4" />
             </a>
+
+            <div className="flex items-center gap-3">
+              <CalendarDays className="h-7 w-7 text-gold" strokeWidth={1.3} />
+              <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] whitespace-nowrap text-foreground/80`}>
+                Atendimento em
+                <br />
+                Fortaleza - CE
+              </span>
+            </div>
           </div>
-        </footer>
+        </div>
       </div>
     </section>
   );
