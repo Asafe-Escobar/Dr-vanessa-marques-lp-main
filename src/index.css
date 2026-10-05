@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
@@ -61,31 +62,3 @@
     font-family: var(--font-display);
   }
 }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); opacity: 0.03; }
-  50% { transform: translateY(-15px); opacity: 0.05; }
-}
-
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.02; transform: scale(1); }
-  50% { opacity: 0.04; transform: scale(1.05); }
-}
-
-@keyframes line-drift {
-  0% { opacity: 0; transform: translateX(-5%) translateY(-3%); }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; transform: translateX(3%) translateY(2%); }
-}
-
-.animate-float-2 { animation: float 10s ease-in-out infinite 1s; }
-.animate-float-4 { animation: pulse-soft 8s ease-in-out infinite; }
-
-.animate-line-1 { animation: line-drift 12s ease-in-out infinite; }
-.animate-line-2 { animation: line-drift 15s ease-in-out infinite 2s; }
-.animate-line-3 { animation: line-drift 10s ease-in-out infinite 4s; }
-.animate-line-4 { animation: line-drift 14s ease-in-out infinite 1s; }
-.animate-line-5 { animation: line-drift 11s ease-in-out infinite 3s; }
-.animate-line-6 { animation: line-drift 13s ease-in-out infinite 5s; }
-.animate-line-7 { animation: line-drift 16s ease-in-out infinite 2.5s; }
