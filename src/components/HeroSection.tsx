@@ -1,24 +1,32 @@
-import { ArrowRight, CalendarDays, ShieldCheck, UserRound } from "lucide-react";
+import { ArrowRight, CalendarDays, ShieldCheck, Target, UserRound } from "lucide-react";
 import draVanessa from "@/assets/dra-vanessa.png";
 import logoVanessa from "@/assets/logo-vanessa.png";
 import BackgroundIcons from "./BackgroundIcons";
-import { IntestineIcon, LiverIcon, PancreasIcon, StomachIcon } from "./OrganIcons";
+import {
+  BreathTestIcon,
+  DysbiosisIcon,
+  IntestineIcon,
+  MotilityIcon,
+  PyloriIcon,
+  SiboIcon,
+} from "./OrganIcons";
 
 const WHATSAPP_URL =
   "https://wa.me/558596265262?text=Olá!%20Vi%20o%20anúncio%20no%20Google%20e%20gostaria%20de%20mais%20informações.";
 
 const features = [
-  { icon: StomachIcon, label: ["Diagnóstico", "preciso"] },
+  { icon: Target, label: ["Diagnóstico", "preciso"] },
   { icon: IntestineIcon, label: ["Exames", "avançados"] },
   { icon: UserRound, label: ["Atendimento", "humanizado"] },
   { icon: ShieldCheck, label: ["Tratamento", "personalizado"] },
 ];
 
-const organs = [
-  { icon: StomachIcon, label: "Estômago" },
-  { icon: IntestineIcon, label: "Intestino" },
-  { icon: LiverIcon, label: "Fígado" },
-  { icon: PancreasIcon, label: "Pâncreas" },
+const focusAreas = [
+  { icon: DysbiosisIcon, label: ["Disbiose"] },
+  { icon: SiboIcon, label: ["SIBO e IMO"] },
+  { icon: PyloriIcon, label: ["H. pylori"] },
+  { icon: MotilityIcon, label: ["Motilidade"] },
+  { icon: BreathTestIcon, label: ["Teste", "respiratório"] },
 ];
 
 const smallCaps = "font-body text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.18em]";
@@ -86,23 +94,33 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Órgãos */}
+        {/* Áreas de foco */}
         <ul
-          className="[grid-area:organs] relative z-20 grid grid-cols-4 gap-2 -mt-6 pb-10
+          className="[grid-area:organs] relative z-20 grid grid-cols-5 gap-1 sm:gap-2 -mt-6 pb-10
             lg:mt-0 lg:pb-0 lg:flex lg:flex-col lg:gap-[clamp(1rem,2.4vh,1.5rem)] lg:self-center lg:pl-6 xl:pl-10"
-          aria-label="Áreas de atendimento"
+          aria-label="Áreas de foco"
         >
           {/* Linha vertical que conecta os círculos (desktop) */}
           <span
             className="hidden lg:block absolute left-[calc(1.5rem+28px)] xl:left-[calc(2.5rem+28px)] top-7 -bottom-16 w-px bg-gold/50"
             aria-hidden="true"
           />
-          {organs.map(({ icon: Icon, label }) => (
-            <li key={label} className="relative flex flex-col items-center gap-2 lg:flex-row lg:gap-5">
+          {focusAreas.map(({ icon: Icon, label }) => (
+            <li key={label[0]} className="relative flex flex-col items-center gap-2 lg:flex-row lg:gap-5">
               <span className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-gold/60 bg-background/80 text-gold-light backdrop-blur-sm">
                 <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
               </span>
-              <span className={`${smallCaps} text-[9px] sm:text-[10px] text-foreground/80`}>{label}</span>
+              <span
+                className={`${smallCaps} text-[8.5px] sm:text-[10px] leading-[1.5] tracking-[0.08em] sm:tracking-[0.18em] text-center lg:text-left text-foreground/80`}
+              >
+                {label[0]}
+                {label[1] && (
+                  <>
+                    <br />
+                    {label[1]}
+                  </>
+                )}
+              </span>
             </li>
           ))}
         </ul>
@@ -126,12 +144,11 @@ const HeroSection = () => {
           </ul>
 
           <div className="border-l border-gold/70 pl-5 sm:pl-6 mt-8 lg:mt-[clamp(1.5rem,4.5vh,3rem)] max-w-[62ch]">
-            <p className="font-body text-sm md:text-[15px] leading-[1.75] text-foreground/80">
-              Sofre com estufamento, gases, refluxo, dores abdominais ou alterações intestinais?
-              <br className="hidden xl:block" /> Agende sua consulta com a{" "}
-              <strong className="font-semibold text-foreground">Dra. Vanessa Marques em Fortaleza.</strong>
-              <br className="hidden xl:block" /> Tenha uma avaliação completa e acesso a exames como a endoscopia
-              digestiva alta e o teste respiratório para um diagnóstico preciso e um tratamento correto.
+            <p className="font-body text-sm md:text-[15px] leading-[1.75] text-foreground/80 [text-wrap:pretty]">
+              Sofre com estufamento, gases, refluxo, desconfortos abdominais ou alterações intestinais? Agende sua
+              consulta ou seu teste respiratório para SIBO e IMO (disbioses) com a{" "}
+              <strong className="font-semibold text-foreground">Dra. Vanessa Marques em Fortaleza.</strong> Tenha uma
+              avaliação completa e detalhada na consulta para um diagnóstico preciso e um tratamento correto.
             </p>
           </div>
 
@@ -149,9 +166,9 @@ const HeroSection = () => {
             <div className="flex items-center gap-3">
               <CalendarDays className="h-7 w-7 text-gold" strokeWidth={1.3} />
               <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] whitespace-nowrap text-foreground/80`}>
-                Atendimento em
+                Atendimento em Fortaleza - CE
                 <br />
-                Fortaleza - CE
+                ou online para todo o Brasil
               </span>
             </div>
           </div>
