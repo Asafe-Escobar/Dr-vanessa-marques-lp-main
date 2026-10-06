@@ -14,11 +14,16 @@ const GRAIN =
 const BackgroundIcons = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
-      {/* Foto do consultório */}
+      {/* Mobile/tablet: cor sólida da parede, onde a foto se dissolve */}
+      <div className="absolute inset-0 bg-[#2c1b0e] lg:hidden" />
+
+      {/* Foto do consultório — no mobile vira uma faixa no topo, enquadrando a poltrona atrás da doutora */}
       <img
         src={consultorioBg}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-[78%_100%] lg:object-[85%_100%]"
+        className="absolute inset-x-0 top-0 h-[860px] w-full object-cover object-[73%_100%] sm:h-[1000px] sm:object-[70%_100%]
+          [mask-image:linear-gradient(to_bottom,black_78%,transparent)]
+          lg:inset-0 lg:h-full lg:object-[85%_100%] lg:[mask-image:none]"
       />
 
       {/* Planta da esquerda — camada própria para não ser cortada pelo enquadramento */}
@@ -33,7 +38,7 @@ const BackgroundIcons = () => {
         className="absolute inset-0 lg:hidden"
         style={{
           background:
-            "linear-gradient(to bottom, hsl(var(--hero-dark) / 0.15), hsl(var(--hero-dark) / 0.45) 50%, hsl(var(--hero-dark) / 0.7))",
+            "linear-gradient(to bottom, hsl(var(--hero-dark) / 0.35) 0%, hsl(var(--hero-dark) / 0.1) 35%, hsl(var(--hero-dark) / 0.05) 50%, hsl(var(--hero-dark) / 0.35) 70%, hsl(var(--hero-dark) / 0.5) 100%)",
         }}
       />
       {/* Desktop: leve escurecimento do lado do texto */}
