@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, ShieldCheck, Target, UserRound } from "lucide-react";
+import { ArrowRight, CalendarDays, Instagram, ShieldCheck, Target, UserRound } from "lucide-react";
 import draVanessa from "@/assets/dra-vanessa.png";
 import logoVanessa from "@/assets/logo-vanessa.png";
 import BackgroundIcons from "./BackgroundIcons";
@@ -13,6 +13,8 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/558596265262?text=Olá!%20Vi%20o%20anúncio%20no%20Google%20e%20gostaria%20de%20mais%20informações.";
+
+const INSTAGRAM_URL = "https://www.instagram.com/vanessamarquesgastro/";
 
 const features = [
   { icon: Target, label: ["Diagnóstico", "preciso"] },
@@ -52,7 +54,7 @@ const HeroSection = () => {
         </header>
 
         {/* Selo + título */}
-        <div className="[grid-area:intro] pt-10 sm:pt-14 lg:pt-[clamp(2rem,8vh,6rem)]">
+        <div className="[grid-area:intro] pt-10 sm:pt-14 lg:pt-[clamp(1.5rem,5vh,5rem)]">
           <p className={`${smallCaps} flex items-center gap-4 text-foreground/80 mb-5 lg:mb-6`}>
             Saúde digestiva é qualidade de vida
             <span className="h-px w-12 sm:w-16 bg-gold/70" aria-hidden="true" />
@@ -126,8 +128,8 @@ const HeroSection = () => {
         </ul>
 
         {/* Benefícios, texto e CTA */}
-        <div className="[grid-area:body] pb-14 lg:pb-[clamp(2.5rem,8vh,5rem)]">
-          <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-y-4 xl:flex-nowrap mt-2 lg:mt-[clamp(1.5rem,4vh,2.75rem)]">
+        <div className="[grid-area:body] pb-14 lg:pb-[clamp(2rem,6vh,5rem)]">
+          <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-y-4 xl:flex-nowrap mt-2 lg:mt-[clamp(1.25rem,3vh,2.75rem)]">
             {features.map(({ icon: Icon, label }, i) => (
               <li
                 key={label[0]}
@@ -143,7 +145,7 @@ const HeroSection = () => {
             ))}
           </ul>
 
-          <div className="border-l border-gold/70 pl-5 sm:pl-6 mt-8 lg:mt-[clamp(1.5rem,4.5vh,3rem)] max-w-[62ch]">
+          <div className="border-l border-gold/70 pl-5 sm:pl-6 mt-8 lg:mt-[clamp(1.25rem,3.5vh,3rem)] max-w-[62ch]">
             <p className="font-body text-sm md:text-[15px] leading-[1.75] text-foreground/80 [text-wrap:pretty]">
               Sofre com estufamento, gases, refluxo, desconfortos abdominais ou alterações intestinais? Agende sua
               consulta ou seu teste respiratório para SIBO e IMO (disbioses) com a{" "}
@@ -152,7 +154,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 2xl:gap-10 mt-8 lg:mt-[clamp(1.75rem,5vh,3rem)]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 2xl:gap-10 mt-8 lg:mt-[clamp(1.5rem,4vh,3rem)]">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -172,6 +174,18 @@ const HeroSection = () => {
               </span>
             </div>
           </div>
+
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-3 rounded-sm font-body text-sm text-foreground/80 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-background lg:mt-[clamp(1rem,2.5vh,2rem)]"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold-light">
+              <Instagram className="h-4 w-4" strokeWidth={1.5} />
+            </span>
+            @vanessamarquesgastro
+          </a>
         </div>
       </div>
     </section>
