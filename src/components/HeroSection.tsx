@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, ShieldCheck, Target, UserRound } from "lucide-react";
+import { ArrowRight, CalendarDays, Instagram, ShieldCheck, Target, UserRound } from "lucide-react";
 import draVanessa from "@/assets/dra-vanessa.png";
 import logoVanessa from "@/assets/logo-vanessa.png";
 import BackgroundIcons from "./BackgroundIcons";
@@ -13,6 +13,8 @@ import {
 
 const WHATSAPP_URL =
   "https://wa.me/558596265262?text=Olá!%20Vi%20o%20anúncio%20no%20Google%20e%20gostaria%20de%20mais%20informações.";
+
+const INSTAGRAM_URL = "https://www.instagram.com/vanessamarquesgastro/";
 
 const features = [
   { icon: Target, label: ["Diagnóstico", "preciso"] },
@@ -52,7 +54,7 @@ const HeroSection = () => {
         </header>
 
         {/* Selo + título */}
-        <div className="[grid-area:intro] pt-10 sm:pt-14 lg:pt-[clamp(2rem,8vh,6rem)]">
+        <div className="[grid-area:intro] pt-10 sm:pt-14 lg:pt-[clamp(1.5rem,5vh,5rem)]">
           <p className={`${smallCaps} flex items-center gap-4 text-foreground/80 mb-5 lg:mb-6`}>
             Saúde digestiva é qualidade de vida
             <span className="h-px w-12 sm:w-16 bg-gold/70" aria-hidden="true" />
@@ -126,8 +128,8 @@ const HeroSection = () => {
         </ul>
 
         {/* Benefícios, texto e CTA */}
-        <div className="[grid-area:body] pb-14 lg:pb-[clamp(2.5rem,8vh,5rem)]">
-          <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-y-4 xl:flex-nowrap mt-2 lg:mt-[clamp(1.5rem,4vh,2.75rem)]">
+        <div className="[grid-area:body] pb-14 lg:pb-[clamp(2rem,6vh,5rem)]">
+          <ul className="grid grid-cols-2 gap-y-5 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-y-4 xl:flex-nowrap mt-2 lg:mt-[clamp(1.25rem,3vh,2.75rem)]">
             {features.map(({ icon: Icon, label }, i) => (
               <li
                 key={label[0]}
@@ -143,7 +145,7 @@ const HeroSection = () => {
             ))}
           </ul>
 
-          <div className="border-l border-gold/70 pl-5 sm:pl-6 mt-8 lg:mt-[clamp(1.5rem,4.5vh,3rem)] max-w-[62ch]">
+          <div className="border-l border-gold/70 pl-5 sm:pl-6 mt-8 lg:mt-[clamp(1.25rem,3.5vh,3rem)] max-w-[62ch]">
             <p className="font-body text-sm md:text-[15px] leading-[1.75] text-foreground/80 [text-wrap:pretty]">
               Sofre com estufamento, gases, refluxo, desconfortos abdominais ou alterações intestinais? Agende sua
               consulta ou seu teste respiratório para SIBO e IMO (disbioses) com a{" "}
@@ -152,7 +154,8 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 2xl:gap-10 mt-8 lg:mt-[clamp(1.75rem,5vh,3rem)]">
+          {/* Botões: agendar (principal) e Instagram (secundário) */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 lg:mt-[clamp(1.5rem,4vh,3rem)]">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -163,14 +166,25 @@ const HeroSection = () => {
               <ArrowRight className="h-4 w-4" />
             </a>
 
-            <div className="flex items-center gap-3">
-              <CalendarDays className="h-7 w-7 text-gold" strokeWidth={1.3} />
-              <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] whitespace-nowrap text-foreground/80`}>
-                Atendimento em Fortaleza - CE
-                <br />
-                ou online para todo o Brasil
-              </span>
-            </div>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da Dra. Vanessa Marques (@vanessamarquesgastro)"
+              className="inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md border border-gold/70 bg-[hsl(var(--hero-dark)/0.35)] px-7 py-[1.1rem] font-body text-sm font-semibold uppercase tracking-[0.16em] text-foreground backdrop-blur-sm transition-colors duration-300 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-fit"
+            >
+              <Instagram className="h-[18px] w-[18px] text-gold-light" strokeWidth={1.6} />
+              Instagram
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3 mt-6 lg:mt-[clamp(1rem,2.5vh,1.75rem)]">
+            <CalendarDays className="h-7 w-7 text-gold" strokeWidth={1.3} />
+            <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] whitespace-nowrap text-foreground/80`}>
+              Atendimento em Fortaleza - CE
+              <br />
+              ou online para todo o Brasil
+            </span>
           </div>
         </div>
       </div>
