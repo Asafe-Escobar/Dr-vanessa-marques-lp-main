@@ -154,7 +154,8 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6 2xl:gap-10 mt-8 lg:mt-[clamp(1.5rem,4vh,3rem)]">
+          {/* Botões: agendar (principal) e Instagram (secundário) */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 lg:mt-[clamp(1.5rem,4vh,3rem)]">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -165,27 +166,26 @@ const HeroSection = () => {
               <ArrowRight className="h-4 w-4" />
             </a>
 
-            <div className="flex items-center gap-3">
-              <CalendarDays className="h-7 w-7 text-gold" strokeWidth={1.3} />
-              <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] whitespace-nowrap text-foreground/80`}>
-                Atendimento em Fortaleza - CE
-                <br />
-                ou online para todo o Brasil
-              </span>
-            </div>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da Dra. Vanessa Marques (@vanessamarquesgastro)"
+              className="inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md border border-gold/70 bg-[hsl(var(--hero-dark)/0.35)] px-7 py-[1.1rem] font-body text-sm font-semibold uppercase tracking-[0.16em] text-foreground backdrop-blur-sm transition-colors duration-300 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-fit"
+            >
+              <Instagram className="h-[18px] w-[18px] text-gold-light" strokeWidth={1.6} />
+              Instagram
+            </a>
           </div>
 
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-3 rounded-sm font-body text-sm text-foreground/80 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-background lg:mt-[clamp(1rem,2.5vh,2rem)]"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 text-gold-light">
-              <Instagram className="h-4 w-4" strokeWidth={1.5} />
+          <div className="flex items-center gap-3 mt-6 lg:mt-[clamp(1rem,2.5vh,1.75rem)]">
+            <CalendarDays className="h-7 w-7 text-gold" strokeWidth={1.3} />
+            <span className={`${smallCaps} text-[9px] sm:text-[10px] leading-[1.7] whitespace-nowrap text-foreground/80`}>
+              Atendimento em Fortaleza - CE
+              <br />
+              ou online para todo o Brasil
             </span>
-            @vanessamarquesgastro
-          </a>
+          </div>
         </div>
       </div>
     </section>
